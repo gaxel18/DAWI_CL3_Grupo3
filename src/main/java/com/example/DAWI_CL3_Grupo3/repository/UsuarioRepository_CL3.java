@@ -9,7 +9,6 @@ import com.example.DAWI_CL3_Grupo3.model.bd.Usuario;
 public interface UsuarioRepository_CL3 extends JpaRepository<Usuario, Integer>{
 	
 	Usuario findByEmail(String email);
-	
 	Usuario findByNomusuario(String nomusu);
 
 }

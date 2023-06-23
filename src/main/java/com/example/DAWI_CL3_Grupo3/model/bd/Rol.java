@@ -23,6 +23,6 @@ public class Rol {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idrol_cl3; 
 	@Column(name="nomrol_cl3")
-	private String nomrol_cl3; 
+	private String nomrol;
 
 }

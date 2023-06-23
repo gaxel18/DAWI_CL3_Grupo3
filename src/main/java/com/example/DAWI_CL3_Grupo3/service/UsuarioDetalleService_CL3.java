@@ -38,7 +38,7 @@ public class UsuarioDetalleService_CL3 implements UserDetailsService {
 				new HashSet<GrantedAuthority>();
 		for(Rol rol: listRoles) {
 			roles.add(new 
-					SimpleGrantedAuthority(rol.getNomrol_cl3()));
+					SimpleGrantedAuthority(rol.getNomrol()));
 		}
 		List<GrantedAuthority> grantedAuthorities 
 			= new ArrayList<>(roles);
@@ -50,7 +50,7 @@ public class UsuarioDetalleService_CL3 implements UserDetailsService {
 	private UserDetails usuarioPorAutenticacion(
 			Usuario usuario,
 			List<GrantedAuthority> authorityList) {
-		return new User(usuario.getNomusu(),
+		return new User(usuario.getNomusuario(),
 				usuario.getPass_cl3(),
 				usuario.getActivo(),
 				true, true, true, authorityList);
