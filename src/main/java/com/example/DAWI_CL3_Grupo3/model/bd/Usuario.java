@@ -24,30 +24,30 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="usuario")
+@Table(name="usuario_cl3")
 public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idusuario; 
-	@Column(name="nomusuario")
-	private String nomusuario;
+	private Integer idusu_cl3; 
+	@Column(name="nomusu")
+	private String nomusu;
 	@Column (name="email")
 	private String email; 
-	@Column(name="password")
-	private String password; 
-	@Column(name="nombres")
-	private String nombres; 
-	@Column (name="apellidos")
-	private String apellidos; 
+	@Column(name="pass_cl3")
+	private String pass_cl3; 
+	@Column(name="nom_cl3")
+	private String nom_cl3; 
+	@Column (name="ape_cl3")
+	private String ape_cl3; 
 	@Column (name="activo")
 	private Boolean activo; 
 	
 	@ManyToMany(cascade = CascadeType.MERGE, 
 			fetch = FetchType.EAGER)
-	@JoinTable(name ="usuario_rol",
-			joinColumns = @JoinColumn(name="idusuario"),
-			inverseJoinColumns = @JoinColumn(name="idrol"))
+	@JoinTable(name ="usuario_rol_cl3",
+			joinColumns = @JoinColumn(name="idusu_cl3"),
+			inverseJoinColumns = @JoinColumn(name="idrol_cl3"))
 	private Set<Rol> rol;
 
 }
