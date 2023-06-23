@@ -25,9 +25,9 @@ public class UsuarioService_CL3 {
 			new BCryptPasswordEncoder();
 	
 	public Usuario buscarPorNombre
-		(String nomUsuario) {
+		(String nomusu) {
 		return usuarioRepositorycl3
-				.findByNomusuario(nomUsuario);
+				.findByNomusuario(nomusu);
 	}
 	
 	public Usuario guardarUsuario(
