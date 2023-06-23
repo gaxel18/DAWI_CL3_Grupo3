@@ -10,8 +10,9 @@
     <script th:src="@{/js/jquery/jquery.js}" type="text/javascript"></script>
 </head>
 <body>
+<div class="container mt-2 pt-2">
 <div class="card">
-    <div class="card-header">AUTENTICACIÓN DE USUARIO</div>
+    <div class="card-header"style="text-align: center;">AUTENTICACIÓN</div>
     <div class="card-body">
         <form method="post" th:action="@{/auth/login}">
             <div class="mb-3">
@@ -26,14 +27,16 @@
             <div th:if="${param.error}" class="alert alert-danger" role="alert">
                 Usuario o Password incorrecto.
             </div>
-            <button type="submit" class="btn btn-primary">INGRESAR</button>
             <a th:href="@{/auth/registrar}" class="btn btn-primary">REGISTRARSE</a>
+            <button type="submit" class="btn btn-primary">INGRESAR</button>
+
 
 
         </form>
 
 
     </div>
+</div>
 </div>
 </body>
 </html>
