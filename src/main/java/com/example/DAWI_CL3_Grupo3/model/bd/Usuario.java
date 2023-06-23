@@ -48,6 +48,6 @@ public class Usuario {
 	@JoinTable(name ="usuario_rol",
 			joinColumns = @JoinColumn(name="idusuario"),
 			inverseJoinColumns = @JoinColumn(name="idrol"))
-	private Set<Rol> roles;
+	private Set<Rol> rol;
 
 }
