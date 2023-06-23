@@ -17,7 +17,7 @@ import lombok.Setter;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="rol_cl3")
+@Table(name="rolcl3")
 public class Rol {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

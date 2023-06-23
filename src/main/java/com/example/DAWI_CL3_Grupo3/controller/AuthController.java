@@ -25,13 +25,11 @@ public class AuthController {
 	public String registrar() {
 		return "auth/frmRegistrocl3";
 	}
+
 	@PostMapping("/guardarUsuario")
-	public String guardarUsuario(
-			@ModelAttribute Usuario usuario,
-			Model model) {
+	public String guardarUsuario(@ModelAttribute Usuario usuario, Model model) {
 		usuarioServicecl3.guardarUsuario(usuario);
-		model.addAttribute("registroCorrecto",
-				true);
+		model.addAttribute("registroCorrecto", true);
 		return "auth/frmRegistrocl3";
 	}
 }

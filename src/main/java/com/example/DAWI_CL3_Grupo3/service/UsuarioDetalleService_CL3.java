@@ -50,7 +50,8 @@ public class UsuarioDetalleService_CL3 implements UserDetailsService {
 	private UserDetails usuarioPorAutenticacion(
 			Usuario usuario,
 			List<GrantedAuthority> authorityList) {
-		return new User(usuario.getNomusuario(),
+		return new User(
+				usuario.getNomusuario(),
 				usuario.getPass_cl3(),
 				usuario.getActivo(),
 				true, true, true, authorityList);

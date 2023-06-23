@@ -20,15 +20,15 @@ import lombok.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name="usuario_cl3")
+@Table(name="usuariocl3")
 public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer idusu_cl3; 
-	@Column(name="nomusu")
+	@Column(name="nomusu_cl3")
 	private String nomusuario;
-	@Column (name="email")
+	@Column (name="email_cl3")
 	private String email; 
 	@Column(name="pass_cl3")
 	private String pass_cl3; 
@@ -41,7 +41,7 @@ public class Usuario {
 	
 	@ManyToMany(cascade = CascadeType.MERGE, 
 			fetch = FetchType.EAGER)
-	@JoinTable(name ="usuario_rol_cl3",
+	@JoinTable(name ="usuariorolcl3",
 			joinColumns = @JoinColumn(name="idusu_cl3"),
 			inverseJoinColumns = @JoinColumn(name="idrol_cl3"))
 	private Set<Rol> rol;

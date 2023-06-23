@@ -26,20 +26,16 @@ public class UsuarioService_CL3 {
 	
 	public Usuario buscarPorNombre
 		(String nomusu) {
-		return usuarioRepositorycl3
-				.findByNomusuario(nomusu);
+		return usuarioRepositorycl3.findByNomusuario(nomusu);
 	}
 	
-	public Usuario guardarUsuario(
-			Usuario usuario) {
-		usuario.setPass_cl3(
-				bCryptPasswordEncoder
-					.encode(usuario.getPass_cl3()));
+	public Usuario guardarUsuario(Usuario usuario) {
+		if (usuario.getPass_cl3() != null) {
+			usuario.setPass_cl3(bCryptPasswordEncoder.encode(usuario.getPass_cl3()));
+		}
 		usuario.setActivo(true);
-		Rol rol = rolRepositorycl3
-				.findByNomrol("ADMIN");
-		usuario.setRol(new HashSet<Rol>(
-				Arrays.asList(rol)));
+		Rol rol = rolRepositorycl3.findByNomrol("ADMIN");
+		usuario.setRol(new HashSet<Rol>(Arrays.asList(rol)));
 		return usuarioRepositorycl3.save(usuario);
 	}
 
